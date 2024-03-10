@@ -52,7 +52,7 @@ body {
     padding-left: 15px; 
 }
 .cart_counter{
-    display: flex;
+    display: none;
     align-items: start;
     flex-direction: column;
     margin-left: -17px;
