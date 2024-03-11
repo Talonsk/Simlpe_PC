@@ -228,6 +228,10 @@ body {
     line-height: 27px;
     color: #1D1D1D;
 }
+.in-cart:hover{
+    background-color: #c5fd4d;
+}
+
 .characteristics {
     display: flex;
     flex-direction: column;
