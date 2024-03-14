@@ -468,6 +468,9 @@ input[type=checkbox]:checked + .checkbox {
     line-height: 28px;
     color: #1D1D1D;
 }
+.submit-order:hover{
+    background-color: #c5fd4d;
+}
 .footer {
     display: flex;
     width: 100%;
