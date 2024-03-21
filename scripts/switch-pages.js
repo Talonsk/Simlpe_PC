@@ -18,5 +18,3 @@ rightButton.addEventListener('click', function(e){
     leftButton.style.backgroundColor = 'rgba(179, 235, 57, 1)';
     rightButton.style.backgroundColor = 'rgba(179, 235, 57, 0.4)';
 });
-
-
