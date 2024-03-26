@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -14,9 +14,9 @@
             <div class="links">
                 <p class="number">+7 (495) 120-35-20</p>
                 <div class="cart">
-                    <p>Корзина</p>
+                    <a  href="pages/cart.html"> Корзина </a> 
                     <img src="images/intro/cart.svg" alt="cart">
-                    <div class="cart_counter" id="cart_counter">
+                    <div class="cart-counter">
                         <img src="images/intro/cart_circle.svg">
                         <p>0</p>
                     </div>
@@ -44,10 +44,10 @@
             <div class="pc" id="pc">
                 <div class="PC">
                     <img src="images/catalog/1.svg" alt="PC1" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка минимальная</h2>
                     <div class="price-frame">
-                        <p class="price">75 000 ₽</p>
-                        <button class="in-cart" id="in_cart">В корзину</button>
+                        <p class="price">5 000 ₽</p>
+                        <button class="in-cart">В корзину</button>
                     </div>
                     <div class="characteristics">
                         <div class="characteristics-frame">
@@ -111,9 +111,9 @@
 
                 <div class="PC">
                     <img src="images/catalog/2.svg" alt="PC2" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка игровая</h2>
                     <div class="price-frame">
-                        <p class="price">75 000 ₽</p>
+                        <p class="price">7 000 ₽</p>
                         <button class="in-cart" id="in_cart">В корзину</button>
                     </div>
                     <div class="characteristics">
@@ -178,9 +178,9 @@
 
                 <div class="PC">
                     <img src="images/catalog/3.svg" alt="PC3" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка профессиональная</h2>
                     <div class="price-frame">
-                        <p class="price">75 000 ₽</p>
+                        <p class="price">30 000 ₽</p>
                         <button class="in-cart" id="in_cart">В корзину</button>
                     </div>
                     <div class="characteristics">
@@ -247,9 +247,9 @@
             <div class="pc2" id="pc2">
                 <div class="PC">
                     <img src="images/catalog/1.svg" alt="PC1" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка топовая</h2>
                     <div class="price-frame">
-                        <p class="price">75 000 ₽</p>
+                        <p class="price">50 000 ₽</p>
                         <button class="in-cart" id="in_cart">В корзину</button>
                     </div>
                     <div class="characteristics">
@@ -314,7 +314,7 @@
 
                 <div class="PC">
                     <img src="images/catalog/2.svg" alt="PC2" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка ультра</h2>
                     <div class="price-frame">
                         <p class="price">75 000 ₽</p>
                         <button class="in-cart" id="in_cart">В корзину</button>
@@ -381,9 +381,9 @@
 
                 <div class="PC">
                     <img src="images/catalog/3.svg" alt="PC3" class="PC-img">
-                    <h2 class="assembling">Сборка №1</h2>
+                    <h2 class="assembling">Сборка Гелакси</h2>
                     <div class="price-frame">
-                        <p class="price">75 000 ₽</p>
+                        <p class="price">100 000 ₽</p>
                         <button class="in-cart" id="in_cart">В корзину</button>
                     </div>
                     <div class="characteristics">
@@ -466,19 +466,19 @@
         </div>
         <div class="form">
             <div class="container">
-                <input type="text" placeholder="Введите имя" id="name" class="small">
+                <input type="text" placeholder="Введите имя" id="name" class="small" required>
                 <label for="name" class="small-label">Имя</label>
-                <input type="text" placeholder="Введите телефон" id="tel" class="small">
+                <input type="tel" placeholder="Введите телефон" id="tel" class="small" required>
                 <label for="tel" class="small-label">Телефон</label>
-                <input type="text" placeholder="Введите почту" id="mail" class="small">
+                <input type="email" placeholder="Введите почту" id="mail" class="small" required>
                 <label for="mail" class="small-label">Почта</label>
             </div>
             <div class="container">
-                <input type="text" placeholder="Введите имя" id="goal" class="small">
+                <input type="text" placeholder="Введите имя" id="goal" class="small" required>
                 <label for="goal" class="small-label">Цель сборки</label>
-                <input type="text" placeholder="Введите диапазон бюджета" id="budget" class="small">
+                <input type="text" placeholder="Введите диапазон бюджета" id="budget" class="small" required>
                 <label for="budget" class="small-label">Бюджет</label>
-                <input type="text" placeholder="Введите нужную дату получения" id="date" class="small">
+                <input type="text" placeholder="Введите нужную дату получения" id="date" class="small" required>
                 <label for="date" class="small-label">Дата получения</label>
             </div>
             <div class="container">
@@ -494,7 +494,7 @@
                     Я согласен с политикой обработки персональных данных
                 </label>
             </div>
-            <button class="submit-order" id="submit_order">Отправить заявку</button>
+            <button class="submit-order" type="submit">Отправить заявку</button>
         </div>
     </div>
     <footer class="footer">
