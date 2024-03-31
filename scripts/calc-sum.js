@@ -11,13 +11,16 @@ function createPage(){
     `<div class="product">
         <div class="computer">
             <img src="../images/catalog/3.svg" alt="sborka3" id="computer_image">
-            <p id="description">Сборка №3</p>
+            <p class="sborkaname" id="description">Сборка №3</p>
         </div>
         <div class="buttons-and-prices">
             <div class="butt">
-                <button class="minus" disabled="disabled">-</button>
-                <p id="quantity">1</p>
-                <button class="plus">+</button>
+                <button class="minus" disabled="disabled"></button>
+                <p class="quantity" id="quantity">1</p>
+                <button class="plus"></button>
+                <div class="ubrat">
+                    <button class="ubratknopka"></button>
+                </div>
             </div>
             <p class="prise">75 000 ₽</p>
         </div>      
