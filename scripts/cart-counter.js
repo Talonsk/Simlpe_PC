@@ -44,32 +44,20 @@ function showCartCounter(x){
     arr_assembling = JSON.parse(localStorage.getItem("assembling"));
     new_as_string = JSON.stringify(new_assembling);
 
-    // var contains = arr_assembling.some(function(ele){      
-    //     return JSON.stringify(ele) === new_as_string;
-    // });
-   
-    // if (!contains){
-    //     arr_assembling.push(new_assembling);
-    //     localStorage.setItem("assembling", JSON.stringify(arr_assembling));
-    // }
-
-    // Тоже писал под вечер, но вроде работает, прада иногда уходит в бесконечный цикл
-    for (i=0; i<=arr_assembling.length; i++){
-        if  (arr_assembling.length == 0){
-            arr_assembling.push(new_assembling);
-            localStorage.setItem("assembling", JSON.stringify(arr_assembling));  
-            return      
-        }else if (arr_assembling[i].id != new_assembling.id){
-            arr_assembling.push(new_assembling);
-            localStorage.setItem("assembling", JSON.stringify(arr_assembling));
-            return
-        }else{
-            arr_assembling[i].assembling += 1;
+    if  (arr_assembling.length == 0){
+        arr_assembling.push(new_assembling);
+        localStorage.setItem("assembling", JSON.stringify(arr_assembling));  
+        return
+    }
+    for (elem of arr_assembling){
+        if (elem.id == new_assembling.id){
+            elem.assembling += 1;
             localStorage.setItem("assembling", JSON.stringify(arr_assembling));
             return
         }
     }
-
+    arr_assembling.push(new_assembling);
+    localStorage.setItem("assembling", JSON.stringify(arr_assembling));
 }
 submitOrder.addEventListener('click', function(e){
     localStorage.setItem("counter", "0");

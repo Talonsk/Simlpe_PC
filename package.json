@@ -1,0 +1,26 @@
+{
+  "name": "simple_pc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Talonsk/Simlpe_PC.git"
+  },
+  "author": "andey.p, nikita.e, danila.p",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Talonsk/Simlpe_PC/issues"
+  },
+  "homepage": "https://github.com/Talonsk/Simlpe_PC#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.1"
+  }
+}

@@ -9,7 +9,9 @@
 p,h1,h2,h3,h4,h5,h6 {
     margin: unset;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     overflow-x: hidden;
@@ -22,9 +24,12 @@ body {
 }
 .header {
     display: flex;
+    position: fixed;
+    width: 100%;
     max-width: 1596px;
     padding-top: 24px;
     padding-left: 162px;
+    z-index: 1;
     justify-content: space-between;
 }
 .number {
@@ -126,14 +131,16 @@ body {
     border: none;
     padding: 18px 24px 18px 24px;
     gap: 8px;
+}
+.view-catalog a,.order a{
+    text-decoration: none;
 
     font-family: Montserrat, serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 27px;
-    color: #1D1D1D;
+    color: #1D1D1D;      
 }
-
 .catalog {
     display: flex;
     background: #1D1D1D;
@@ -230,7 +237,11 @@ body {
     color: #1D1D1D;
 }
 .in-cart:hover{
-    background-color: #c5fd4d;
+    background-color: #9FD133;
+    cursor: pointer
+}
+.in-cart:active{
+    background-color: #8CB82D;
 }
 
 .characteristics {

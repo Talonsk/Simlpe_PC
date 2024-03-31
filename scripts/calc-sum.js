@@ -4,6 +4,8 @@ let computerPrise = document.querySelectorAll('.prise');
 let numberAssemblies = document.querySelectorAll('#quantity')
 let listOfProduct = document.querySelector('.product_list');
 
+var Arr = JSON.parse(localStorage.getItem("assembling"));
+
 function createPage(){
     listOfProduct.innerHTML += 
     `<div class="product">
@@ -26,13 +28,8 @@ function createPage(){
     numberAssemblies = document.querySelectorAll('#quantity');
 }
 
-var Arr = JSON.parse(localStorage.getItem("assembling"));
-
-// var computer_quantity = 1;
-
 for (i=0; i<Arr.length; i++){
-    createPage()
-    // console.log("Карточка создана", i)
+    createPage();
     var computer_prise = 
     Arr[i]
         .prise
@@ -53,8 +50,18 @@ var counter_text = cartCounter.querySelector('p').innerText = parseInt(localStor
 if (counter_text != 0){
     cartCounter.style.display = 'flex';
 }
+var interval = 0;
 
 for (i=0; i<Arr.length; i++){
+    plusButton[i].addEventListener('mousedown', longPress.bind(null, 5, i));
+    minusButton[i].addEventListener('mousedown', longPress.bind(null, -5, i));
+
+    plusButton[i].addEventListener('mouseup', (e = (interval)) => {clearInterval(interval)});
+    minusButton[i].addEventListener('mouseup', (e = (interval)) => {clearInterval(interval)}); 
+
+    plusButton[i].addEventListener('mouseout', (e = (interval)) => {clearInterval(interval)});
+    minusButton[i].addEventListener('mouseout', (e = (interval)) => {clearInterval(interval)});
+
     plusButton[i].addEventListener('click', changeSum.bind(null, 1, i));
     minusButton[i].addEventListener('click', changeSum.bind(null, -1, i));
     if (Arr[i].assembling != 1){
@@ -63,20 +70,25 @@ for (i=0; i<Arr.length; i++){
 }
 
 function changeSum(step, x){
-    // Было написано ночью, потом исправить
-    cart = cartCounter.querySelector('p').innerText ;
-    cartCounter.querySelector('p').innerText = parseInt(cart) + step;
-    console.log(parseInt(cart) + step)
-    localStorage.setItem("counter", parseInt(cart) + step);
-    // Впольт до этого
+    cart = parseInt(localStorage.getItem("counter")) + step;
+    localStorage.setItem("counter", cart);
+    cartCounter.querySelector('p').innerText = cart;    
+
     computer_quantity = Arr[x].assembling + step;
+    computer_prise = Arr[x].prise.slice(0, -2).replace(" ", "");
     numberAssemblies[x].innerText = computer_quantity;
     computerPrise[x].innerText = (computer_prise * computer_quantity).toLocaleString() + '₽';
     Arr[x].assembling = computer_quantity;
-    localStorage.setItem("assembling", JSON.stringify(Arr))
+    localStorage.setItem("assembling", JSON.stringify(Arr));
     if (computer_quantity != 1){
         minusButton[x].disabled = false;
     }else{
         minusButton[x].disabled = true;
     }
+}
+
+function longPress(step, x){
+    var time = 2000;
+    var wait = (step, x) => {if (computer_quantity + step > 0){changeSum(step, x)}else changeSum(1 - computer_quantity, x)};    
+    interval = setInterval(wait.bind(null, step, x), time);
 }
