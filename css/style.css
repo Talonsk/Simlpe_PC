@@ -642,3 +642,91 @@ input[type=checkbox]:checked + .checkbox {
 .plus:disabled {
     background: #B3EB3966 url("../images/cart/plus.svg") no-repeat 50%;
 }
+
+/*Адаптив емаё*/
+@media screen and (max-width: 1440px){
+    .header {
+        max-width: 1410px;
+        padding-left: 15px;
+    }
+    .hero {
+        padding-left: 256px;
+        max-width: 928px;
+        padding-bottom: 150px;
+    }
+    .intro {
+        max-width: 1440px;
+        height: 100%;
+    }
+    .catalog {
+        padding-top: 120px;
+
+    }
+    .head {
+        padding-left: 357px;
+        max-width: 726px;
+    }
+    .page {
+        padding-left: 15px;
+    }
+    .pc {
+        gap: 127.5px;
+    }
+    .pc2 {
+        gap: 127.5px;
+    }
+    .PC-img {
+        max-width: 385px;
+    }
+    .PC {
+        max-width: 385px;
+    }
+    .next-page-buttons {
+        margin-left: 15px;
+        max-width: 1410px;
+    }
+    .motivation {
+        font-size: 18px;
+        max-width: 726px;
+    }
+    .form {
+        padding-left: 15px;
+        max-width: 1410px;
+    }
+    .small {
+        max-width: 413.33px;
+    }
+    .container {
+        gap: 25px;
+    }
+    .small-label {
+        width: 453.33px;
+        margin-left: -478.67px;
+    }
+    .large {
+        max-width: 1370px;
+    }
+    .large-label {
+        margin-left: -1437px;
+        max-width: 1410px;
+    }
+    .submit {
+        padding-left: 15px;
+    }
+    .footer {
+        margin-left: 15px;
+        max-width: 1410px;
+    }
+    .cart_page {
+        padding-left: 15px;
+    }
+    .buttons-and-prices {
+        padding-left: 561px;
+    }
+    .ubrat {
+        padding-left: 591px;
+    }
+    .oformlenie {
+        margin-left: 580px;
+    }
+}
