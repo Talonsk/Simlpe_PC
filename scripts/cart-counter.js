@@ -26,12 +26,14 @@ if (!localStorage.getItem("counter")){
 for (i=0; i<=5; i++){
     inCartButtom[i].addEventListener('click', showCartCounter.bind(null, i));
 };
-
-function showCartCounter(x){
+function changeCounter(){
     counter_value = parseInt(localStorage.getItem("counter"));
     localStorage.setItem("counter", counter_value + 1);
     cartCounter.querySelector('p').innerText = parseInt(localStorage.getItem("counter"));
     cartCounter.style.display = 'flex';  
+}
+
+function showCartCounter(x){
 
     let new_assembling = new Assembling(
         inCartButtom[x].parentElement.parentElement.children[0].currentSrc,
@@ -47,15 +49,22 @@ function showCartCounter(x){
     if  (arr_assembling.length == 0){
         arr_assembling.push(new_assembling);
         localStorage.setItem("assembling", JSON.stringify(arr_assembling));  
+        changeCounter()
         return
     }
     for (elem of arr_assembling){
         if (elem.id == new_assembling.id){
+            if(elem.assembling>=99){
+                alert('Иди нахуй пидор ванючий')
+                return
+            }
             elem.assembling += 1;
             localStorage.setItem("assembling", JSON.stringify(arr_assembling));
+            changeCounter()
             return
         }
     }
+    changeCounter()
     arr_assembling.push(new_assembling);
     localStorage.setItem("assembling", JSON.stringify(arr_assembling));
 }
